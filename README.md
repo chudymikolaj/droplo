@@ -1,23 +1,23 @@
-Wymagania Funkcjonalności:
-1. Lista nawigacji:
-a. Wyświetla listę elementów nawigacji z nazwą (label) oraz URL (url).
-b. Umożliwia drag & drop elementów w celu zmiany kolejności.
-c. Każdy element powinien zawierać przycisk do edycji.
+### Wymagania Funkcjonalności:
 
-2. Formularz tworzenia nawigacji:
-a. Umożliwia dodanie nowego elementu nawigacji z polami:
-i. Nazwa (label) - wymagane.
-ii. URL (url) - opcjonalne.
-iii. Możliwość dodania pod-elementów (rekursywnie).
-b. Walidacja pól (np. wymaganie wypełnienia pola label).
+**1. Lista nawigacji:**
+- Wyświetla listę elementów nawigacji z nazwą (label) oraz URL (url).
+- Umożliwia drag & drop elementów w celu zmiany kolejności.
+- Każdy element powinien zawierać przycisk do edycji.
 
-3. Formularz edycji nawigacji:
-a. Umożliwia edycję istniejącego elementu nawigacji, łącznie z jego podelementami.
+**3. Formularz tworzenia nawigacji:**
+- Umożliwia dodanie nowego elementu nawigacji z polami:
+  - Nazwa (label) - wymagane.
+  - URL (url) - opcjonalne.
+  - Możliwość dodania pod-elementów (rekursywnie).
+- Walidacja pól (np. wymaganie wypełnienia pola label).
 
-Technologie:
-1. Frontend: Next.js
-2. Stylizacja: Tailwind CSS
-3. Drag & Drop: dnd-kit
-4. Formularze i walidacja: Dowolna biblioteka do obsługi formularzy i walidacji 
-(np. React Hook Form, Formik lub Zod).
-5. Zarządzanie stanem: Możesz użyć lokalnego stanu
+**4. Formularz edycji nawigacji:**
+- Umożliwia edycję istniejącego elementu nawigacji, łącznie z jego podelementami.
+
+### Technologie:
+- Frontend: Next.js
+- Stylizacja: Tailwind CSS
+- Drag & Drop: dnd-kit
+- Formularze i walidacja: Dowolna biblioteka do obsługi formularzy i walidacji (np. React Hook Form, Formik lub Zod).
+- Zarządzanie stanem: Możesz użyć lokalnego stanu
