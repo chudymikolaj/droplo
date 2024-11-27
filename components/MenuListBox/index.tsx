@@ -1,10 +1,11 @@
 import Image from "next/image";
+import AddMenuItem from "../AddMenuItem";
 
 const MenuListBox = () => {
 	return (
 		<section className="w-full container m-auto">
-			<div>
-				<h1 className="mb-4 text-2xl font-semibold">Lista nawigacji</h1>
+			<div className="py-[20px] px-6 bg-background-primary border border-border-primary rounded-lg">
+				<h1 className="mb-[20px] font-semibold">Pozycje menu</h1>
 				<div className="bg-background-secondary border border-border-secondary rounded-lg flex flex-col justify-center items-center">
 					<div className="w-full p-6 flex flex-col justify-center items-center gap-6">
 						<div className="flex flex-col justify-center items-center gap-1">
@@ -24,6 +25,8 @@ const MenuListBox = () => {
 					</div>
 				</div>
 			</div>
+
+			<AddMenuItem />
 		</section>
 	);
 };
