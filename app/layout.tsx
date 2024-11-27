@@ -29,7 +29,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} antialiased bg-background-secondary`}>{children}</body>
+			<body className={`${inter.className} antialiased bg-background-secondary`}>
+				<div className="container mx-auto">{children}</div>
+			</body>
 		</html>
 	);
 }

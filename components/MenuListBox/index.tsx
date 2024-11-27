@@ -3,12 +3,12 @@ import AddMenuItem from "../AddMenuItem";
 
 const MenuListBox = () => {
 	return (
-		<section className="w-full container m-auto">
+		<section className="w-full m-auto">
 			<div className="py-[20px] px-6 bg-background-primary border border-border-primary rounded-lg">
 				<h1 className="mb-[20px] font-semibold">Pozycje menu</h1>
 				<div className="bg-background-secondary border border-border-secondary rounded-lg flex flex-col justify-center items-center">
 					<div className="w-full p-6 flex flex-col justify-center items-center gap-6">
-						<div className="flex flex-col justify-center items-center gap-1">
+						<div className="flex flex-col justify-center items-center gap-1 text-center">
 							<h2 className="font-semibold">Menu jest puste</h2>
 							<p className=" text-text-teritary text-sm">W tym menu nie ma jeszcze żadnych linków.</p>
 						</div>
