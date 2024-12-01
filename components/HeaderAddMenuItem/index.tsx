@@ -14,7 +14,7 @@ const HeaderAddMenuItem = () => {
 					</label>
 					<input
 						id="menu"
-						className="py-2 px-3 border border-border-primary rounded-lg"
+						className="py-2 px-3 border border-border-primary rounded-lg focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition"
 						name="menu"
 						type="text"
 						placeholder="np. Menu główne"
@@ -30,7 +30,7 @@ const HeaderAddMenuItem = () => {
 					</label>
 					<input
 						id="link"
-						className="py-2 px-3 border border-border-primary rounded-lg"
+						className="py-2 px-3 border border-border-primary rounded-lg focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition"
 						name="link"
 						type="text"
 						placeholder="Wklej lub wyszukaj"

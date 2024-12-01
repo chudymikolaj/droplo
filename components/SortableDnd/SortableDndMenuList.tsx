@@ -76,7 +76,10 @@ export default function DragAndDropMenuList() {
 							key={item.id}
 							id={Number(item.id)}
 						>
-							{item.id}
+							<div>
+								<p>{item.id}</p>
+								<p>{item.id}</p>
+							</div>
 						</SortableItem>
 					))}
 				</ul>
