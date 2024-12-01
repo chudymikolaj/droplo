@@ -14,7 +14,7 @@ const MenuListBox = () => {
 								<h2 className="font-semibold">Menu jest puste</h2>
 								<p className=" text-text-teritary text-sm">W tym menu nie ma jeszcze żadnych linków.</p>
 							</div>
-							<button className="px-4 py-3 flex flex-row justify-center items-center gap-1 bg-button-primary-background border border-button-primary-border rounded-[10px] shadow  font-semibold text-white text-sm hover:bg-button-primary-background-hover focus:outline-none focus:ring-[4px] focus:ring-button-primary-background-outline/[.24] transition-[background-color]">
+							<button className="px-4 py-3 flex flex-row justify-center items-center gap-1 bg-button-primary-background border border-button-primary-border rounded-[10px] shadow  font-semibold text-white text-sm hover:bg-button-primary-background_hover focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition">
 								<Image
 									aria-hidden
 									src="/plus-circle.svg"
