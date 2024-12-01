@@ -17,7 +17,7 @@ export default {
 				"button-secondary-color-border": "#D6BBFB",
 				"button-secondary-color-border_bg-hover": "#F9F5FF",
 				"button-secondary-background_hover": "#F9FAFB",
-				"button-secondary-background_hover-border": "#F9FAFB",
+				"button-secondary-background_hover-border": "#D0D5DD",
 				"button-secondary-background_outline": "#98A2B3",
 				"button-secondary-fg": "#344054",
 				"button-secondary-color-fg": "#6941C6",

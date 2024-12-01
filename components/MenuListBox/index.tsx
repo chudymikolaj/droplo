@@ -27,7 +27,7 @@ const MenuListBox = () => {
 						</div>
 
 						<AddMenuItem />
-						<DragAndDropMenuList />
+						<DragAndDropMenuList menuId="main-menu-1" />
 					</div>
 				</div>
 			</div>
