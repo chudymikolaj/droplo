@@ -48,16 +48,8 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	const [menus, setMenus] = useState<MenuItem[]>(menuListArray);
 
-	const addMenuItem = (item: MenuItem, parentId?: string) => {
-		if (parentId) {
-			// Add to a specific parent menu
-			setMenus((prev) =>
-				prev.map((menu) => (menu.menuId === parentId ? { ...menu, links: [...menu.links, ...item.links] } : menu))
-			);
-		} else {
-			// Add as a top-level menu
-			setMenus((prev) => [...prev, item]);
-		}
+	const addMenuItem = (item: MenuItem) => {
+		setMenus((prev) => [...prev, item]);
 	};
 
 	const updateMenuItem = (menuId: string, updatedItem: Partial<MenuItem>) => {
