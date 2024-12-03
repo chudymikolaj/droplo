@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import * as Yup from "yup";
 import { Formik, Field, Form, FormikHelpers } from "formik";
 import { useMenus } from "@/context/AppContext"; // Adjust the path to your context
 
@@ -9,7 +10,7 @@ interface AddMenuItemInterface {
 	link: string;
 }
 
-const AddMenuItem: React.FC<{ menuId: string }> = ({ menuId }) => {
+const AddMenuItem: React.FC<{ menuId: string; handleShowForm: () => void }> = ({ menuId, handleShowForm }) => {
 	const { menus, updateMenuItem } = useMenus(); // Use context to update the menu
 
 	const currentMenu = menus.find((menu) => menu.menuId === menuId);
@@ -18,6 +19,11 @@ const AddMenuItem: React.FC<{ menuId: string }> = ({ menuId }) => {
 		return <p>Menu not found</p>;
 	}
 
+	const validationSchema = Yup.object({
+		linkName: Yup.string().required("Nazwa is required"),
+		link: Yup.string().url("Must be a valid URL").required("Link is required"),
+	});
+
 	return (
 		<div className="w-full mt-6 py-[20px] px-6 bg-background-primary border border-border-primary rounded-lg">
 			<Formik
@@ -25,6 +31,7 @@ const AddMenuItem: React.FC<{ menuId: string }> = ({ menuId }) => {
 					linkName: "",
 					link: "",
 				}}
+				validationSchema={validationSchema}
 				onSubmit={(values: AddMenuItemInterface, { setSubmitting, resetForm }: FormikHelpers<AddMenuItemInterface>) => {
 					// Create a new link item
 					const newLink = {
@@ -81,7 +88,7 @@ const AddMenuItem: React.FC<{ menuId: string }> = ({ menuId }) => {
 							<button
 								type="button"
 								className="py-[10px] px-4 border border-button-secondary-border rounded-lg text-button-secondary-fg font-semibold hover:bg-button-secondary-background_hover hover:border:button-secondary-background_hover-border focus:outline-none focus:ring-[4px] focus:ring-button-secondary-background_outline/[.24] transition"
-								onClick={() => console.log("Cancel action")}
+								onClick={handleShowForm}
 							>
 								Anuluj
 							</button>
