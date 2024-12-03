@@ -146,42 +146,62 @@ const DragAndDropLinks: React.FC<{ menuId: string }> = ({ menuId }) => {
 								<div>
 									{editingLinkId === link.id ? (
 										<form onSubmit={handleSaveEditedLink}>
-											<div>
-												<label htmlFor="editingLinkName">Link Name:</label>
+											<div className="mb-[6px] flex flex-col gap-[6px]">
+												<label
+													className="text-sm font-semibold"
+													htmlFor="editingLinkName"
+												>
+													Nazwa:
+												</label>
 												<input
 													id="editingLinkName"
+													className="py-2 px-3 border border-border-primary rounded-lg focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition"
 													type="text"
 													value={editingLinkName}
 													onChange={(e) => setEditingLinkName(e.target.value)}
 													required
 												/>
 											</div>
-											<div>
-												<label htmlFor="editingLinkURL">Link URL:</label>
+											<div className="flex flex-col gap-[6px]">
+												<label
+													className="text-sm font-semibold"
+													htmlFor="editingLinkURL"
+												>
+													Link:
+												</label>
 												<input
 													id="editingLinkURL"
+													className="py-2 px-3 border border-border-primary rounded-lg focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition"
 													type="text"
 													value={editingLinkURL}
 													onChange={(e) => setEditingLinkURL(e.target.value)}
 												/>
 											</div>
-											<button type="submit">Save</button>
-											<button
-												type="button"
-												onClick={() => setEditingLinkId(null)} // Close edit form
-											>
-												Cancel
-											</button>
+											<div className="mt-5 flex flex-row gap-2">
+												<button
+													type="button"
+													className="py-[10px] px-4 border border-button-secondary-border rounded-lg text-button-secondary-fg font-semibold hover:bg-button-secondary-background_hover hover:border:button-secondary-background_hover-border focus:outline-none focus:ring-[4px] focus:ring-button-secondary-background_outline/[.24] transition"
+													onClick={() => setEditingLinkId(null)} // Close edit form
+												>
+													Anuluj
+												</button>
+												<button
+													className="py-[10px] px-4 border border-button-secondary-color-border rounded-lg text-button-secondary-color-fg hover:bg-button-secondary-color-border_bg-hover font-semibold focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition disabled:bg-border-disabled_subtle"
+													type="submit"
+												>
+													Zmień
+												</button>
+											</div>
 										</form>
 									) : (
 										<div>
-											<p className="mb-[6px] text-lg font-semibold">{link.name}</p>
+											<p className="mb-[6px] text-lg leading-none text-sm font-semibold">{link.name}</p>
 											{link.link && (
 												<a
 													href={link.link}
 													target="_blank"
 													rel="noopener noreferrer"
-													className="text-blue-500 underline"
+													className="text text-text-teritary no-underline text-sm"
 												>
 													{link.link}
 												</a>
@@ -190,7 +210,6 @@ const DragAndDropLinks: React.FC<{ menuId: string }> = ({ menuId }) => {
 									)}
 								</div>
 
-								{/* Show submenu form for specific link */}
 								{activeLinkId === link.id && (
 									<div>
 										<h3>Add Submenu</h3>
@@ -230,7 +249,6 @@ const DragAndDropLinks: React.FC<{ menuId: string }> = ({ menuId }) => {
 									</div>
 								)}
 
-								{/* Render submenus for the link */}
 								{link.submenus && link.submenus.length > 0 && (
 									<ul>
 										{link.submenus.map((submenu) => (
@@ -263,9 +281,23 @@ const DragAndDropLinks: React.FC<{ menuId: string }> = ({ menuId }) => {
 									className="w-[40px] h-[40px] cursor-grab flex justify-center items-center"
 									title="Drag"
 								>
-									☰
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.16667 7.49996L1.66667 9.99996M1.66667 9.99996L4.16667 12.5M1.66667 9.99996H18.3333M7.5 4.16663L10 1.66663M10 1.66663L12.5 4.16663M10 1.66663V18.3333M12.5 15.8333L10 18.3333M10 18.3333L7.5 15.8333M15.8333 7.49996L18.3333 9.99996M18.3333 9.99996L15.8333 12.5"
+											stroke="#475467"
+											strokeWidth="1.66667"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
 								</div>
-								<p>{draggingLink.name}</p> {/* Display the name of the item being dragged */}
+								<p className="text-lg leading-none text-sm font-semibold">{draggingLink.name}</p>{" "}
 							</div>
 						</div>
 					)}
