@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Image from "next/image";
 import AddMenuItem from "@/components/AddMenuItem";
 import DragAndDropMenuList from "@/components/SortableDnd/SortableDndMenuList";
 
 const MenuListBox = () => {
+	const [showAddLinkForm, setshowAddLinkForm] = useState(false);
+
+	const handleShowAddLinkForm = () => {
+		setshowAddLinkForm((prev) => !prev);
+	};
+
 	return (
 		<section className="w-full m-auto">
 			<div className="py-[20px] px-6 bg-background-primary border border-border-primary rounded-lg">
@@ -14,7 +21,10 @@ const MenuListBox = () => {
 								<h2 className="font-semibold">Menu jest puste</h2>
 								<p className=" text-text-teritary text-sm">W tym menu nie ma jeszcze żadnych linków.</p>
 							</div>
-							<button className="px-4 py-3 flex flex-row justify-center items-center gap-1 bg-button-primary-background border border-button-primary-border rounded-[10px] shadow  font-semibold text-white text-sm hover:bg-button-primary-background_hover focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition">
+							<button
+								onClick={handleShowAddLinkForm}
+								className="px-4 py-3 flex flex-row justify-center items-center gap-1 bg-button-primary-background border border-button-primary-border rounded-[10px] shadow  font-semibold text-white text-sm hover:bg-button-primary-background_hover focus:outline-none focus:ring-[4px] focus:ring-button-primary-background_outline/[.24] transition"
+							>
 								<Image
 									aria-hidden
 									src="/plus-circle.svg"
@@ -26,7 +36,12 @@ const MenuListBox = () => {
 							</button>
 						</div>
 
-						<AddMenuItem menuId="main-menu-1" />
+						{showAddLinkForm && (
+							<AddMenuItem
+								menuId="main-menu-1"
+								handleShowForm={handleShowAddLinkForm}
+							/>
+						)}
 						<DragAndDropMenuList menuId="main-menu-1" />
 					</div>
 				</div>
